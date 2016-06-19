@@ -1,5 +1,6 @@
 package TechnicalExam.Utils;
 
+import TechnicalExam.Setting.SetValue;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -9,14 +10,34 @@ public class CheckProcess {
 
 		System.out.println("data = " + data);
 		
-		String processNmae = "";
-		Pattern p = Pattern.compile("[0-9]");
-		Matcher m = p.matcher(data);
+		String processName = null;
 		
-		System.out.println("matcher M  = " + m.find());
+		// 課題１にマッチするかをチェックする
+		Pattern patten = Pattern.compile("^[0-9]+$");
+		Matcher firstMatcher = patten.matcher(data);
 		
-
-		return processNmae;
+		// 課題2にマッチするかをチェックする
+		patten = Pattern.compile("^[0-1]+$");
+		Matcher secondMatcher = patten.matcher(data);
+		
+		// 課題2にマッチするかをチェックする
+		patten = Pattern.compile("^[a-zA-Z]+$");
+		Matcher thirdMatcher = patten.matcher(data);
+		
+		
+		if(firstMatcher.find()) {
+			processName = SetValue.PROCESS_1;
+		}
+		
+		if(secondMatcher.find()) {
+			processName = SetValue.PROCESS_2;
+		}
+	
+		if(thirdMatcher.find()) {
+			processName = SetValue.PROCESS_3;
+		}
+		
+		return processName;
 	}
 
 }
