@@ -1,6 +1,6 @@
 package TechnicalExam.Utils;
 
-import TechnicalExam.Setting.SetValue;
+import TechnicalExam.Utils.SetValue;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 

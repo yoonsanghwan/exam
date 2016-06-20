@@ -1,4 +1,4 @@
-package TechnicalExam.Setting;
+package TechnicalExam.Utils;
 
 public class SetValue {
 		
